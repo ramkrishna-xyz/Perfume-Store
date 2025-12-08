@@ -266,11 +266,30 @@ padding: 20px;
 
 #order-form input, #order-form textarea, #contact-form input, #contact-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #666;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #222;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#order-form input:focus, #order-form textarea:focus, #contact-form input:focus, #contact-form textarea:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
     color: #fff;
 }
 
