@@ -96,29 +96,26 @@
         </div>
     </footer>
     <script>
+        // Simple mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                if (mobileMenu.style.display === 'block') {
+                    mobileMenu.style.display = 'none';
+                } else {
+                    mobileMenu.style.display = 'block';
+                }
+            }
+        }
+
+        // Attach event listener when page loads
         document.addEventListener('DOMContentLoaded', function() {
             const hamburgerMenu = document.getElementById('hamburger-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (hamburgerMenu && mobileMenu) {
-                console.log('Hamburger menu and mobile menu found');
-                hamburgerMenu.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    console.log('Hamburger clicked');
-                    console.log('Mobile menu current display:', getComputedStyle(mobileMenu).display);
-
-                    if (mobileMenu.style.display === 'flex') {
-                        mobileMenu.style.display = 'none';
-                        console.log('Menu hidden');
-                    } else {
-                        mobileMenu.style.display = 'flex';
-                        console.log('Menu shown');
-                    }
-                });
+            if (hamburgerMenu) {
+                hamburgerMenu.onclick = toggleMobileMenu;
+                console.log('Mobile menu toggle attached');
             } else {
-                console.log('Hamburger menu or mobile menu not found');
-                console.log('hamburgerMenu:', hamburgerMenu);
-                console.log('mobileMenu:', mobileMenu);
+                console.log('Hamburger menu not found');
             }
         });
     </script>
