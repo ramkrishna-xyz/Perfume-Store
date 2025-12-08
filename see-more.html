@@ -21,9 +21,18 @@
     <nav class="nav-bar-responsive">
         <a id="logo" href="index.html">Oceanaroma</a>
         <div class="nav-bar-links">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-              </svg>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+            </button>
+            <ul class="mobile-menu" id="mobile-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><button class="button-style" onclick="window.location.href='order.html'">Order Now</button></li>
+            </ul>
         </div>
     </nav>
     
@@ -44,27 +53,41 @@
     <footer id="footer">
         <div>
             <h1 class="big-text">Oceanaroma</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo architecto ut veritatis illum quaerat. Ea similique harum repellat excepturi! Consequuntur iusto deserunt accusantium tempore ullam.</p>
+            <p>Experience the essence of luxury with Oceanaroma - where every scent tells a story. Discover fragrances that capture the beauty of the ocean and the depth of emotions.</p>
             <p>&copy; 2024 Oceanaroma - All rights Reserved</p>
         </div>
         <div>
             <h2 class="big-text">Opening Times</h2>
-            <p>Monday: Friday: 10.00 - 23.00 
+            <p>Monday: Friday: 10.00 - 23.00
                 <br>
                 Saturday: 10.00 - 19.00</p>
                 <div id="social-logos">
-                    <img src="logos/facebook.png" alt="">
-                    <img src="logos/instagram.png" alt="">
-                    <img src="logos/twitter.png" alt="">
-                    <img src="logos/pinterest.png" alt="">
+                    <a href="https://facebook.com/oceanaroma" target="_blank"><img src="logos/facebook.png" alt="Facebook"></a>
+                    <a href="https://instagram.com/oceanaroma" target="_blank"><img src="logos/instagram.png" alt="Instagram"></a>
+                    <a href="https://twitter.com/oceanaroma" target="_blank"><img src="logos/twitter.png" alt="Twitter"></a>
+                    <a href="https://pinterest.com/oceanaroma" target="_blank"><img src="logos/pinterest.png" alt="Pinterest"></a>
                 </div>
         </div>
         <div>
             <h2 class="big-text">Contact Us </h2>
-            <p>Tel: (+12) 345 678 910</p>               
+            <p>Tel: (+12) 345 678 910</p>
+            <p>Tel: (+12) 345 678 911</p>
             <p>Email: info@oceanaroma.shop</p>
             <p>Address: 12345 Street Name, City Name, Country</p>
         </div>
+        <div class="developer-badge">
+            <p>Developed by Ramkrishna</p>
+        </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            hamburgerMenu.addEventListener('click', function() {
+                mobileMenu.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>

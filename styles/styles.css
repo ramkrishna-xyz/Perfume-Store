@@ -45,6 +45,41 @@ body{
     display: none;
 }
 
+.hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.mobile-menu li {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.mobile-menu.show {
+    display: flex;
+}
+
 .nav-bar-links ul li:nth-child(1){
     text-decoration: underline white 3px;
 }
@@ -304,6 +339,20 @@ padding: 20px;
     gap: 60px;
     padding: 60px;
     background-color: black;
+}
+
+.developer-badge {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.developer-badge p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
 }
 
 #footer p{
