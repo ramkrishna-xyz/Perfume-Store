@@ -100,9 +100,15 @@
             const hamburgerMenu = document.getElementById('hamburger-menu');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            hamburgerMenu.addEventListener('click', function() {
-                mobileMenu.classList.toggle('show');
-            });
+            if (hamburgerMenu && mobileMenu) {
+                console.log('Hamburger menu and mobile menu found');
+                hamburgerMenu.addEventListener('click', function() {
+                    console.log('Hamburger clicked');
+                    mobileMenu.classList.toggle('show');
+                });
+            } else {
+                console.log('Hamburger menu or mobile menu not found');
+            }
         });
     </script>
 </body>
