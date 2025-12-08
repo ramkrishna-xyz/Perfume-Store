@@ -22,11 +22,7 @@
         <a id = "logo" href="#">Oceanaroma</a>
         <div class="nav-bar-links">
             <button class="hamburger-menu" id="hamburger-menu">
-                <span style="font-size: 16px; font-weight: bold;">MENU</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                  </svg>
+                <span style="font-size: 14px; font-weight: bold;">Menu</span>
             </button>
             <ul class="mobile-menu" id="mobile-menu">
                 <li><a href="index.html">Home</a></li>
@@ -98,20 +94,11 @@
         </div>
     </footer>
     <script>
-        // Simple mobile menu toggle
+        // Mobile menu toggle
         function toggleMobileMenu() {
-            alert('Hamburger clicked!');
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu) {
-                if (mobileMenu.style.display === 'block') {
-                    mobileMenu.style.display = 'none';
-                    alert('Menu hidden');
-                } else {
-                    mobileMenu.style.display = 'block';
-                    alert('Menu shown');
-                }
-            } else {
-                alert('Mobile menu not found!');
+                mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
             }
         }
 
@@ -120,9 +107,6 @@
             const hamburgerMenu = document.getElementById('hamburger-menu');
             if (hamburgerMenu) {
                 hamburgerMenu.onclick = toggleMobileMenu;
-                console.log('Mobile menu toggle attached');
-            } else {
-                console.log('Hamburger menu not found');
             }
         });
     </script>
