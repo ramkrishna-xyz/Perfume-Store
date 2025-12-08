@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Oceanaroma</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <a id="logo" href="index.html">Oceanaroma</a>
+        <div class="nav-bar-links">
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <button class="button-style">Order Now</button></div>
+    </nav>
+    <nav class="nav-bar-responsive">
+        <a id="logo" href="index.html">Oceanaroma</a>
+        <div class="nav-bar-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </div>
+    </nav>
+    
+    <div class="container-1">
+        <div class="container-text">
+            <h1 class="large-text">Place Your Order</h1>
+            <p>Fill out the form below to order your favorite perfumes.</p>
+        </div>
+        <div id="image-container-1">
+        </div>
+    </div>
+
+    <div class="container-2">
+        <form id="order-form">
+            <label for="quantity">Number of Perfumes:</label>
+            <input type="number" id="quantity" name="quantity" required><br><br>
+            
+            <label for="amount">Amount/Type of Perfumes:</label>
+            <input type="text" id="amount" name="amount" placeholder="e.g., Floral, 100ml" required><br><br>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <button type="submit" class="button-style">Submit Order</button>
+        </form>
+    </div>
+
+    <footer id="footer">
+        <div>
+            <h1 class="big-text">Oceanaroma</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo architecto ut veritatis illum quaerat. Ea similique harum repellat excepturi! Consequuntur iusto deserunt accusantium tempore ullam.</p>
+            <p>&copy; 2024 Oceanaroma - All rights Reserved</p>
+        </div>
+        <div>
+            <h2 class="big-text">Opening Times</h2>
+            <p>Monday: Friday: 10.00 - 23.00 
+                <br>
+                Saturday: 10.00 - 19.00</p>
+                <div id="social-logos">
+                    <img src="logos/facebook.png" alt="">
+                    <img src="logos/instagram.png" alt="">
+                    <img src="logos/twitter.png" alt="">
+                    <img src="logos/pinterest.png" alt="">
+                </div>
+        </div>
+        <div>
+            <h2 class="big-text">Contact Us </h2>
+            <p>Tel: (+12) 345 678 910</p>               
+            <p>Email: info@oceanaroma.shop</p>
+            <p>Address: 12345 Street Name, City Name, Country</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const quantity = document.getElementById('quantity').value;
+            const amount = document.getElementById('amount').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+
+            const message = {
+                content: `New Order:\nQuantity: ${quantity}\nAmount/Type: ${amount}\nAddress: ${address}\nEmail: ${email}`
+            };
+
+            // Replace with your Discord webhook URL
+            const webhookURL = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(message)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Order submitted successfully!');
+                } else {
+                    alert('Failed to submit order.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error submitting order.');
+            });
+        });
+    </script>
+</body>
+</html>
