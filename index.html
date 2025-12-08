@@ -102,12 +102,23 @@
 
             if (hamburgerMenu && mobileMenu) {
                 console.log('Hamburger menu and mobile menu found');
-                hamburgerMenu.addEventListener('click', function() {
+                hamburgerMenu.addEventListener('click', function(event) {
+                    event.preventDefault();
                     console.log('Hamburger clicked');
-                    mobileMenu.classList.toggle('show');
+                    console.log('Mobile menu current display:', getComputedStyle(mobileMenu).display);
+
+                    if (mobileMenu.style.display === 'flex') {
+                        mobileMenu.style.display = 'none';
+                        console.log('Menu hidden');
+                    } else {
+                        mobileMenu.style.display = 'flex';
+                        console.log('Menu shown');
+                    }
                 });
             } else {
                 console.log('Hamburger menu or mobile menu not found');
+                console.log('hamburgerMenu:', hamburgerMenu);
+                console.log('mobileMenu:', mobileMenu);
             }
         });
     </script>
