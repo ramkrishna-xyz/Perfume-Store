@@ -321,25 +321,98 @@ padding: 20px;
 }
 
 /* media queries */
-@media screen and (max-width: 1020px) and (min-width: 768px){
-    .container-2, 
-    .container-3-services{
+@media screen and (max-width: 1200px) {
+    .nav-bar, .nav-bar-responsive {
+        padding: 15px 30px;
+    }
+    .container-1, .container-2, .container-3, .container-4, #footer {
+        padding: 30px;
+    }
+    .large-text {
+        font-size: 60px;
+    }
+    .big-text {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1020px) and (min-width: 769px) {
+    .container-2,
+    .container-3-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container-4-collection {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .container-1, 
-    .container-2, 
-    .container-3-services, 
-    .container-4-collection, 
-    #footer{
+    .container-1,
+    .container-2,
+    .container-3-services,
+    .container-4-collection,
+    #footer {
         grid-template-columns: 1fr;
+        padding: 20px;
     }
-    .nav-bar-responsive{
+    .nav-bar-responsive {
         display: flex;
     }
-    .nav-bar{
+    .nav-bar {
         display: none;
+    }
+    .large-text {
+        font-size: 48px;
+    }
+    .big-text {
+        font-size: 24px;
+    }
+    .button-style {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    #order-form, #contact-form {
+        padding: 20px;
+        max-width: 100%;
+    }
+    .container-1 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    #image-container-1 {
+        order: -1;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-bar, .nav-bar-responsive {
+        padding: 10px 15px;
+    }
+    .large-text {
+        font-size: 36px;
+    }
+    .big-text {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .container-1, .container-2, .container-3, .container-4, #footer {
+        padding: 15px;
+    }
+    .button-style {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    #order-form input, #order-form textarea, #contact-form input, #contact-form textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .product-card, .service-card {
+        padding: 15px;
+    }
+    #footer {
+        padding: 30px 15px;
     }
 }
