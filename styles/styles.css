@@ -20,6 +20,7 @@ body{
     font-weight: 400;
     align-items: center;
     background-color: black;
+    position: relative;
 }
 
 .nav-bar-links{
@@ -46,10 +47,20 @@ body{
 }
 
 .hamburger-menu {
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     cursor: pointer;
     color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-menu:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .mobile-menu {
@@ -59,10 +70,12 @@ body{
     left: 0;
     right: 0;
     background-color: black;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-direction: column;
     padding: 20px;
     gap: 20px;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-menu li {
